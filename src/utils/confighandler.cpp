@@ -725,6 +725,8 @@ bool ConfigHandler::setShortcut(const QString& shortcutName,
         foreach (auto currentShortcutName, m_settings.allKeys()) {
             if (m_settings.value(currentShortcutName) == shortcutItem) {
                 m_settings.setValue(shortcutName, "");
+                // TODO: Add dialog here to replace shortcut instead of always
+                // creating an error
                 error = true;
                 break;
             }
