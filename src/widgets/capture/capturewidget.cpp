@@ -1575,6 +1575,9 @@ void CaptureWidget::childLeave()
 void CaptureWidget::copyScreenshot()
 {
     m_captureDone = true;
+    if (m_mouseIsClicked) {
+        return;
+    }
     if (m_activeTool != nullptr) {
         processPixmapWithTool(&m_context.screenshot, m_activeTool);
     }
